@@ -1,10 +1,12 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt; plt.rcdefaults()
+from pandas.tools.plotting import table
 
 def person_id(dataframes):
     for df in dataframes:
-        df.replace(['300.0', 300.0, '311.0', 311.0], ['300.00', '300.00', '311', '311'], inplace=True)
+
+        df.replace(['300.0', 300.0, '311.0', 311.0, '305.0', 305.0], ['300.00', '300.00', '311', '311', '305.00', '305.00'], inplace=True)
         df['patient_id']= df.apply(lambda df: str(df['Birth Dt']) + df['Gender Desc'] + str(df['Diag 1']), axis=1)
         # df = df.groupby('patient_id')
         df['Diag 4'] = df['Diag 4'].astype(str)
@@ -13,12 +15,9 @@ def person_id(dataframes):
 def dropping_duplicates(dataframes):
     for df in dataframes:
         df = df.drop_duplicates(subset='patient_id', keep='last')
-        # for x in df['Diag 1']:
-        #     if x = '300.0':
-
     return df
 
-def given_diagnosis(df, diag1_code):
+def given_diagnosis(df, diag1_code, df_desc):
     plt.close('all')
     df = df.loc[df['Diag 1'] == diag1_code]
     count_list= []
@@ -44,19 +43,59 @@ def given_diagnosis(df, diag1_code):
      'count': count_list
     })
     together = together.sort_values(['count'], ascending=[False])
+    #I want to exclude any counts where it was only 1 person
+    together = together[together['count'] != 1/len(df)*100]
 
-    # cnt_related_diag = df['Diag 2'].value_counts().fillna(0)+ df['Diag 3'].value_counts().fillna(0)
-    # cnt_related_diag = pd.value_counts(df['Diag 2'].values, sort=False)
 
-    together.plot(x = 'code', y = 'count', kind = 'bar', color = 'r')
+    #Grab DataFrame rows where column has certain values
+    title_desc1= df_desc[df_desc['Diag 1'] == diag1_code]
+    title_desc = str(list(title_desc1['Diag Desc 1']))
+    title_desc = title_desc.strip("['")
+    title_desc = title_desc.strip("']")
+
+    df_desc = df_desc[df_desc['Diag 1'].isin(together['code'])]
+
+    plt.close('all')
+    #creating bar graph
+    fig = together.plot(x = 'code', y = 'count', kind = 'bar', color = 'r', figsize = (8,8))
     plt.ylabel('Percent of Patients')
-    plt.title('Co-morbidity Percents')
+    plt.title('Co-morbidity for {}'.format(diag1_code))
+    plt.savefig('Co-morbid_{}.png'.format(diag1_code))
 
-    plt.savefig('Co-morbid314_01.png')
+    plt.close('all')
+    #
+    # fig, ax = plt.subplots()
+    # ax.xaxis.set_visible(False)
+    # ax.yaxis.set_visible(False)
+
+    # table = plt.table(cellText=df_desc.values,
+    #       cellLoc = 'center', rowLoc = 'center',
+    #       loc='center')
+    # table.set_fontsize(30)
+    # table.scale(2.5,2)
+    # plt.subplots_adjust(right=0.35)
+
+    ax = plt.subplot(111, frame_on=False) # no visible frame
+    ax.xaxis.set_visible(False)  # hide the x axis
+    ax.yaxis.set_visible(False)  # hide the y axis
+
+    ax.table(cellText=df_desc.values, cellLoc = 'center', rowLoc = 'center',
+          loc='center')
+         # where df is your data frame
+    # plt.title('Co-morbidity for {}'.format(title_desc))
+    plt.figtext(.5,.9,'Co-morbidity for {}'.format(title_desc), fontsize=5, ha='center')
+
+    plt.savefig('Co-morbid_{}_table.png'.format(diag1_code),dpi=900)
     print(len(df))
     print (unique)
     print(count_list)
     print(together)
+
+def table_of_codes(df):
+    df_desc = df[['Diag 1','Diag Desc 1']]
+    df_desc = df_desc.drop_duplicates(subset='Diag 1', keep='last')
+    return df_desc
+
 
 if __name__== '__main__':
     df_jan = pd.read_csv('../data/Chloe Jan clean.csv')
@@ -78,7 +117,17 @@ if __name__== '__main__':
     df_combo = df_combo.drop_duplicates(subset='patient_id', keep='last')
 
     # gives amount of patients having each diagnosis
-    print(df_combo['Diag 1'].value_counts())
-    print(df_combo.info())
+    # print(df_combo['Diag 1'].unique())
+    # print(df_combo.info())
 
-    given_diagnosis(df_combo,'314.01')
+    # table_of_codes(df_combo)
+    df_desc = df_combo[['Diag 1','Diag Desc 1']]
+    df_desc = df_desc.drop_duplicates(subset='Diag 1', keep='last')
+
+    #make a graph and table for each diagnosis
+    lst_codes = df_combo['Diag 1'].astype(str)
+    #there is a nan in position 1
+    lst_codes = lst_codes.unique()[2:]
+
+    for x in lst_codes:
+        given_diagnosis(df_combo,x, df_desc)
