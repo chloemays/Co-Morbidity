@@ -4,10 +4,10 @@ import matplotlib.pyplot as plt; plt.rcdefaults()
 
 def person_id(dataframes):
     for df in dataframes:
+        df.replace(['300.0', 300.0, '311.0', 311.0], ['300.00', '300.00', '311', '311'], inplace=True)
         df['patient_id']= df.apply(lambda df: str(df['Birth Dt']) + df['Gender Desc'] + str(df['Diag 1']), axis=1)
         # df = df.groupby('patient_id')
         df['Diag 4'] = df['Diag 4'].astype(str)
-        df.replace(['300.0', 300.0, '311.0', 311.0], ['300.00', '300.00', '311', '311'], inplace=True)
     return df
 
 def dropping_duplicates(dataframes):
@@ -52,7 +52,7 @@ def given_diagnosis(df, diag1_code):
     plt.ylabel('Percent of Patients')
     plt.title('Co-morbidity Percents')
 
-    plt.savefig('Co-morbid296_33.png')
+    plt.savefig('Co-morbid314_01.png')
     print(len(df))
     print (unique)
     print(count_list)
@@ -81,4 +81,4 @@ if __name__== '__main__':
     print(df_combo['Diag 1'].value_counts())
     print(df_combo.info())
 
-    given_diagnosis(df_combo,'296.33')
+    given_diagnosis(df_combo,'314.01')
