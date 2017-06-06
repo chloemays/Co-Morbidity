@@ -9,3 +9,6 @@ Another application is determining if doctors are within the range of national p
 Research:
 Paper on Co-Morbidity of mental disorders and medical ones
 http://www.integration.samhsa.gov/workforce/mental_disorders_and_medical_comorbidity.pdf
+
+website with links to helpful psychology information
+http://www.apa.org/helpcenter/data-behavioral-health.aspx
