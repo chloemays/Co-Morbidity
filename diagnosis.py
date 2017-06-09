@@ -60,10 +60,10 @@ def given_diagnosis(df, diag1_code, df_desc):
 
     plt.close('all')
     #creating bar graph
-    fig = together.plot(x = 'code', y = 'count', kind = 'bar', color = 'b', figsize = (8,8))
+    fig = together.plot(x = 'code', y = 'count', kind = 'bar', color = 'k', figsize = (8,8))
     plt.ylabel('Percent of Patients')
     plt.title('Co-morbidity for {}'.format(diag1_code))
-    plt.savefig('graphs_tables/Co-morbid_{0}_male_21_40.png'.format(diag1_code))
+    plt.savefig('graphs_tables/Co-morbid_{0}.png'.format(diag1_code))
 
     plt.close('all')
     #
@@ -227,7 +227,7 @@ if __name__== '__main__':
     # for x in lst_df:
 
     # given_diagnosis(df_female_41_60,'296.23', df_desc)
-    given_diagnosis(df_male_21_40, '295.70', df_desc)
+    given_diagnosis(df_combo, '295.70', df_desc)
 
 #index of list cod not working 1, 16, 17, 21
 #goal of project

@@ -25,4 +25,4 @@ Another Example
 
 ![image](graphs_tables/Co-morbid_296.23.png)
 
-![image](graphs_tables/Co-morbid_295.70_male_41_60.png)
+![image](graphs_tables/Co-morbid_296.23_male_41_60.png)
