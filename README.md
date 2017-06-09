@@ -10,13 +10,13 @@ Another application is determining if doctors are within the range of national p
 
 ## Data:
 
-    * The information I am using has 19,830 individuals in 6 months of data with 11 different doctors that go to several hospitals. There are 154 different symptoms and disorders that I have to compare.
+* The information I am using has 19,830 individuals in 6 months of data with 11 different doctors that go to several hospitals. There are 154 different symptoms and disorders that I have to compare.
 
-    * I chose to separate by gender and age by groups of 20. I chose groups of 20 years so make sure it still has a good number of patients for each group. And in the bar graphs I discard any co-morbid diagnosis that have 1 or less patients with it.
+* I chose to separate by gender and age by groups of 20. I chose groups of 20 years so make sure it still has a good number of patients for each group. And in the bar graphs I discard any co-morbid diagnosis that have 1 or less patients with it.
 
 ## Visualization:
 
-    * I would like to make a web app to be able to find the information based on personal information entered. And currently using bar graphs to visualize but would like to use different visualization tools.
+* I would like to make a web app to be able to find the information based on personal information entered. And currently using bar graphs to visualize but would like to use different visualization tools.
 
 
 ## Research:
