@@ -30,3 +30,6 @@ http://www.apa.org/helpcenter/data-behavioral-health.aspx
 https://en.wikipedia.org/wiki/DSM-5
 
 http://jamanetwork.com/journals/jamapsychiatry/fullarticle/208029
+
+Co-morbidity app
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4380025/

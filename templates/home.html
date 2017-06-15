@@ -5,9 +5,26 @@
 <body>
 
 <form action = "/getdelay" method="POST">
-	<p> Diagnosis Code:<input name="Diagnosis_Code" type ="number" /> </p>
+	<p> Diagnoisis: <select name="Diagnosis_Code">
+	    <option value="314.01">Attention deficit disorder of childhood with hyperactivity </option>
+		<option value="296.80">Bipolar disorder </option>
+		<option value="296.53">Bipolar I disorder </option>
+		<option value="311">Depressive disorder </option>
+		<option value="300.02">Generalized Anxiety Disorder </option>
+	    <option value="296.33">Major depressive affective disorder</option>
+		<option value="300.3">Obsessive-compulsive disorders  </option>
+		<option value="296.89">Other and unspecified bipolar disorders </option>
+		<option value="300.01">Panic disorder without agorophobia </option>
+		<option value="295.30">Paranoid type schizophrenia </option>
+		<option value="309.81">Posttraumatic stress disorder  </option>
+		<option value="295.73">Schizoaffective disorder </option>
+		<option value="296.90">Unspecified episodic mood disorder  </option>
+		</select>  </p>
 	<p> Age in Years: <input name="Age in Years" type ="number" > </p>
-	<p> Gender:<input name="Gender" type ="text"  /> </p>
+	<p> Gender:<select name="Gender Desc">
+	    <option value="Female">Female</option>
+	    <option value="Male">Male </option>
+		</select>  </p>
 	<p> <input type ="submit" value="submit" /> </p>
 </form>
 </body>
