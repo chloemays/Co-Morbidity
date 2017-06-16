@@ -8,13 +8,33 @@ To help people see that given they have a certain health problem what is the lik
 
 Another application is determining if doctors are within the range of national percent of people having these co-morbid diseases. To make sure the doctors are being thorough with their process.
 
-## Data:
+## Raw Data Background:
 
-The information I am using has 19,830 individuals in 6 months of data with 11 different doctors that go to several hospitals. There are 125 different symptoms and disorders that I have to compare. All of this data is from patients that have seen a psychiatrist so the interpretation of these results should be the percent of co-occurring diagnosis of patients seeing a psychiatrist. 
-
-I chose to separate by gender and age by groups of 20. I chose groups of 20 years so make sure it still has a good number of patients for each group. And in the bar graphs I discard any co-morbid diagnosis that have 1 or less patients with it.
+The information I am using has 19,830 individuals in 6 months of data with 11 different doctors that go to several hospitals. There are 125 different symptoms and disorders that I have to compare. All of this data is from patients that have seen a psychiatrist so the interpretation of these results should be the percent of co-occurring diagnosis of patients seeing a psychiatrist.
 
 In my web app I display histograms of the distributions of age and gender by age. Also, not all doctors see every age group so I chose to display a scatter plot as well on that.
+
+## Interpreting/Manipulating Data:
+
+I decided to generalize some of the terms to have more patients to relate to each other. I edited these to combine the mild, moderate, and severe types.
+
+        bipolar 1 codes
+        Major Depressive disorder
+        Paranoid type schizophrenia
+        schizoaffective disorder
+        Alcohol disorder to include all levels in one
+        cannabus use disorder
+        Phencyclidine use disorder
+        Nondependent alcohol abuse
+        other hallucinogen use disorder
+        Opiod use disorder
+        Sedative Hypnotic or Anxiolytic use disorder
+        stimulant use disorder Amphetamine-type substance/other
+        stimulant use disorder cocaine
+
+I separated the data by gender and age by groups of 20. This made sure it still has a good number of patients for each group. And in the bar graphs I discard any co-morbid diagnosis that have 1 or less patients with that feature.
+
+I did not want individuals to be counted more than once so I just chose the most recent visit.
 
 ## Visualization:
 
