@@ -10,7 +10,7 @@ Another application is determining if doctors are within the range of national p
 
 ## Data:
 
-The information I am using has 19,830 individuals in 6 months of data with 11 different doctors that go to several hospitals. There are 154 different symptoms and disorders that I have to compare.
+The information I am using has 19,830 individuals in 6 months of data with 11 different doctors that go to several hospitals. There are 125 different symptoms and disorders that I have to compare. All of this data is from patients that have seen a psychiatrist so the interpretation of these results should be the percent of co-occurring diagnosis of patients seeing a psychiatrist. 
 
 I chose to separate by gender and age by groups of 20. I chose groups of 20 years so make sure it still has a good number of patients for each group. And in the bar graphs I discard any co-morbid diagnosis that have 1 or less patients with it.
 
