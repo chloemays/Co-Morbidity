@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-	return render_template('index.html')
+	return render_template('index.html', doctor = "/static/images/Co-morbid_age_scatter_doctors.png")
 #
 @app.route('/getdelay',methods=['POST','GET'])
 def get_delay():
