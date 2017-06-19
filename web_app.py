@@ -722,4 +722,4 @@ def get_delay():
 		# return render_template('results.html', data = prediction)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host= '0.0.0.0', port= 8105, threaded=True)
