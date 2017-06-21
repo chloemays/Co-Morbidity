@@ -2,11 +2,15 @@
 
 capstone project
 
+## My website
+
+http://ec2-34-226-42-52.compute-1.amazonaws.com:8105/
+
 ## Goal:
 
 To help people see that given they have a certain health problem what is the likelihood of having other health problems that are co-morbid (co-occurring) in the psychiatry field. Using this they can double check with their doctor if they have checked for those other disorders. The reason I wanted to do psychiatry is because these diagnosis are especially related to a doctors discretion. I wanted to display this in an easy to read format that covers a broad scope of psychiatric diagnosis because normally studies are done with very specific co-morbidity in mind.
 
-Another application is determining if doctors are within the range of national percent of people having these co-morbid diseases. To make sure the doctors are being thorough with their process.
+Another application is comparing doctors rates of diagnosing co-morbidity and comparing it to the average. To make sure the doctors are being thorough with their process.
 
 ## Raw Data Background:
 
@@ -42,23 +46,31 @@ I made a web app to be able to display graphs based on personal information ente
 
 The first page has a header for my topic
 
-![image](static/images/main_header.png)
+![image](static/images/Screenshot_header.png)
 
 Then you can look at the background information giving more context to the data displayed later.
 
-![image](static/images/background.png)
+![image](static/images/Screenshot_background.png)
 
 The best part! Entering your information!
 
-![image](static/images/enter_results.png)
+![image](static/images/Screenshot_results.png)
 
 Then it displays an overhead look at your results
 
-![image](static/images/overall_results.png)
+![image](static/images/Screenshot_yourresults.png)
 
-Every image can be liked on for a closer look and more descriptive information
+Every image can be liked on for a closer look and more descriptive information.
 
-![image](static/images/zoom_results.png)
+![image](static/images/Screenshot_zoom.png)
+
+If you would like too see how each doctor compares in their co-morbid diagnosis you can!
+
+![image](static/images/Screenshot_doctor.png)
+
+This compares the doctors rates to the average rates of the 11 doctors I had information on.
+
+![image](static/images/Screenshot_doctorresult.png)
 
 ## My website
 
