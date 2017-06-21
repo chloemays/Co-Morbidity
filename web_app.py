@@ -8,6 +8,194 @@ app = Flask(__name__)
 def home():
 	return render_template('index.html', doctor = "/static/images/Co-morbid_age_scatter_doctors.png")
 #
+@app.route('/doctorresult',methods=['POST','GET'])
+def doctorresult():
+	if request.method=='POST':
+		result=request.form
+
+		if result['Diagnosis_Code'] == '296.90':
+			doc1 = "/static/comparing/Co-morbid_Unspecified episodic mood disorder_doctor_1.png"
+			doc2 = "/static/comparing/Co-morbid_Unspecified episodic mood disorder_doctor_2.png"
+			doc3 = "/static/comparing/Co-morbid_Unspecified episodic mood disorder_doctor_3.png"
+			doc4 = "/static/comparing/Co-morbid_Unspecified episodic mood disorder_doctor_4.png"
+			doc5 = "/static/comparing/Co-morbid_Unspecified episodic mood disorder_doctor_5.png"
+			doc6 = "/static/comparing/Co-morbid_Unspecified episodic mood disorder_doctor_6.png"
+			doc7 = "/static/comparing/Co-morbid_Unspecified episodic mood disorder_doctor_7.png"
+			doc8 = "/static/comparing/Co-morbid_Unspecified episodic mood disorder_doctor_8.png"
+			doc9 = "/static/comparing/Co-morbid_Unspecified episodic mood disorder_doctor_9.png"
+			doc10 = "/static/comparing/Co-morbid_Unspecified episodic mood disorder_doctor_10.png"
+			doc11 = "/static/comparing/Co-morbid_Unspecified episodic mood disorder_doctor_11.png"
+			return render_template('result.html', doc1 = doc1, doc2 = doc2, doc3 = doc3, doc4 = doc4, doc5 = doc5, doc6 = doc6, doc7 = doc7, doc8 = doc8, doc9 = doc9, doc10 = doc10, doc11 = doc11)
+
+		elif result['Diagnosis_Code'] == '296.80':
+			doc1 = "/static/comparing/Co-morbid_Bipolar disorder_doctor_1.png"
+			doc2 = "/static/comparing/Co-morbid_Bipolar disorder_doctor_2.png"
+			doc3 = "/static/comparing/Co-morbid_Bipolar disorder_doctor_3.png"
+			doc4 = "/static/comparing/Co-morbid_Bipolar disorder_doctor_4.png"
+			doc5 = "/static/comparing/Co-morbid_Bipolar disorder_doctor_5.png"
+			doc6 = "/static/comparing/Co-morbid_Bipolar disorder_doctor_6.png"
+			doc7 = "/static/comparing/Co-morbid_Bipolar disorder_doctor_7.png"
+			doc8 = "/static/comparing/Co-morbid_Bipolar disorder_doctor_8.png"
+			doc9 = "/static/comparing/Co-morbid_Bipolar disorder_doctor_9.png"
+			doc10 = "/static/comparing/Co-morbid_Bipolar disorder_doctor_10.png"
+			doc11 = "/static/comparing/Co-morbid_Bipolar disorder_doctor_11.png"
+			return render_template('result.html', doc1 = doc1, doc2 = doc2, doc3 = doc3, doc4 = doc4, doc5 = doc5, doc6 = doc6, doc7 = doc7, doc8 = doc8, doc9 = doc9, doc10 = doc10, doc11 = doc11)
+
+		elif result['Diagnosis_Code'] == '314.01':
+			doc1 = "/static/comparing/Co-morbid_Attention deficit disorder of childhood with hyperactivity_doctor_1.png"
+			doc2 = "/static/comparing/Co-morbid_Attention deficit disorder of childhood with hyperactivity_doctor_2.png"
+			doc3 = "/static/comparing/Co-morbid_Attention deficit disorder of childhood with hyperactivity_doctor_3.png"
+			doc4 = "/static/comparing/Co-morbid_Attention deficit disorder of childhood with hyperactivity_doctor_4.png"
+			doc5 = "/static/comparing/Co-morbid_Attention deficit disorder of childhood with hyperactivity_doctor_5.png"
+			doc6 = "/static/comparing/Co-morbid_Attention deficit disorder of childhood with hyperactivity_doctor_6.png"
+			doc7 = "/static/comparing/Co-morbid_Attention deficit disorder of childhood with hyperactivity_doctor_7.png"
+			doc8 = "/static/comparing/Co-morbid_Attention deficit disorder of childhood with hyperactivity_doctor_8.png"
+			doc9 = "/static/comparing/Co-morbid_Attention deficit disorder of childhood with hyperactivity_doctor_9.png"
+			doc10 = "/static/comparing/Co-morbid_Attention deficit disorder of childhood with hyperactivity_doctor_10.png"
+			doc11 = "/static/comparing/Co-morbid_Attention deficit disorder of childhood with hyperactivity_doctor_11.png"
+			return render_template('result.html', doc1 = doc1, doc2 = doc2, doc3 = doc3, doc4 = doc4, doc5 = doc5, doc6 = doc6, doc7 = doc7, doc8 = doc8, doc9 = doc9, doc10 = doc10, doc11 = doc11)
+
+		elif result['Diagnosis_Code'] == '296.53':
+			doc1 = "/static/comparing/Co-morbid_Bipolar I disorder_doctor_1.png"
+			doc2 = "/static/comparing/Co-morbid_Bipolar I disorder_doctor_2.png"
+			doc3 = "/static/comparing/Co-morbid_Bipolar I disorder_doctor_3.png"
+			doc4 = "/static/comparing/Co-morbid_Bipolar I disorder_doctor_4.png"
+			doc5 = "/static/comparing/Co-morbid_Bipolar I disorder_doctor_5.png"
+			doc6 = "/static/comparing/Co-morbid_Bipolar I disorder_doctor_6.png"
+			doc7 = "/static/comparing/Co-morbid_Bipolar I disorder_doctor_7.png"
+			doc8 = "/static/comparing/Co-morbid_Bipolar I disorder_doctor_8.png"
+			doc9 = "/static/comparing/Co-morbid_Bipolar I disorder_doctor_9.png"
+			doc10 = "/static/comparing/Co-morbid_Bipolar I disorder_doctor_10.png"
+			doc11 = "/static/comparing/Co-morbid_Bipolar I disorder_doctor_11.png"
+			return render_template('result.html', doc1 = doc1, doc2 = doc2, doc3 = doc3, doc4 = doc4, doc5 = doc5, doc6 = doc6, doc7 = doc7, doc8 = doc8, doc9 = doc9, doc10 = doc10, doc11 = doc11)
+
+		elif result['Diagnosis_Code'] == '311':
+			doc1 = "/static/comparing/Co-morbid_Depressive disorder_doctor_1.png"
+			doc2 = "/static/comparing/Co-morbid_Depressive disorder_doctor_2.png"
+			doc3 = "/static/comparing/Co-morbid_Depressive disorder_doctor_3.png"
+			doc4 = "/static/comparing/Co-morbid_Depressive disorder_doctor_4.png"
+			doc5 = "/static/comparing/Co-morbid_Depressive disorder_doctor_5.png"
+			doc6 = "/static/comparing/Co-morbid_Depressive disorder_doctor_6.png"
+			doc7 = "/static/comparing/Co-morbid_Depressive disorder_doctor_7.png"
+			doc8 = "/static/comparing/Co-morbid_Depressive disorder_doctor_8.png"
+			doc9 = "/static/comparing/Co-morbid_Depressive disorder_doctor_9.png"
+			doc10 = "/static/comparing/Co-morbid_Depressive disorder_doctor_10.png"
+			doc11 = "/static/comparing/Co-morbid_Depressive disorder_doctor_11.png"
+			return render_template('result.html', doc1 = doc1, doc2 = doc2, doc3 = doc3, doc4 = doc4, doc5 = doc5, doc6 = doc6, doc7 = doc7, doc8 = doc8, doc9 = doc9, doc10 = doc10, doc11 = doc11)
+
+		elif result['Diagnosis_Code'] == '300.02':
+			doc1 = "/static/comparing/Co-morbid_Generalized anxiety disorder_doctor_1.png"
+			doc2 = "/static/comparing/Co-morbid_Generalized anxiety disorder_doctor_2.png"
+			doc3 = "/static/comparing/Co-morbid_Generalized anxiety disorder_doctor_3.png"
+			doc4 = "/static/comparing/Co-morbid_Generalized anxiety disorder_doctor_4.png"
+			doc5 = "/static/comparing/Co-morbid_Generalized anxiety disorder_doctor_5.png"
+			doc6 = "/static/comparing/Co-morbid_Generalized anxiety disorder_doctor_6.png"
+			doc7 = "/static/comparing/Co-morbid_Generalized anxiety disorder_doctor_7.png"
+			doc8 = "/static/comparing/Co-morbid_Generalized anxiety disorder_doctor_8.png"
+			doc9 = "/static/comparing/Co-morbid_Generalized anxiety disorder_doctor_9.png"
+			doc10 = "/static/comparing/Co-morbid_Generalized anxiety disorder_doctor_10.png"
+			doc11 = "/static/comparing/Co-morbid_Generalized anxiety disorder_doctor_11.png"
+			return render_template('result.html', doc1 = doc1, doc2 = doc2, doc3 = doc3, doc4 = doc4, doc5 = doc5, doc6 = doc6, doc7 = doc7, doc8 = doc8, doc9 = doc9, doc10 = doc10, doc11 = doc11)
+
+		elif result['Diagnosis_Code'] == '296.33':
+			doc1 = "/static/comparing/Co-morbid_Major depressive affective disorder_doctor_1.png"
+			doc2 = "/static/comparing/Co-morbid_Major depressive affective disorder_doctor_2.png"
+			doc3 = "/static/comparing/Co-morbid_Major depressive affective disorder_doctor_3.png"
+			doc4 = "/static/comparing/Co-morbid_Major depressive affective disorder_doctor_4.png"
+			doc5 = "/static/comparing/Co-morbid_Major depressive affective disorder_doctor_5.png"
+			doc6 = "/static/comparing/Co-morbid_Major depressive affective disorder_doctor_6.png"
+			doc7 = "/static/comparing/Co-morbid_Major depressive affective disorder_doctor_7.png"
+			doc8 = "/static/comparing/Co-morbid_Major depressive affective disorder_doctor_8.png"
+			doc9 = "/static/comparing/Co-morbid_Major depressive affective disorder_doctor_9.png"
+			doc10 = "/static/comparing/Co-morbid_Major depressive affective disorder_doctor_10.png"
+			doc11 = "/static/comparing/Co-morbid_Major depressive affective disorder_doctor_11.png"
+			return render_template('result.html', doc1 = doc1, doc2 = doc2, doc3 = doc3, doc4 = doc4, doc5 = doc5, doc6 = doc6, doc7 = doc7, doc8 = doc8, doc9 = doc9, doc10 = doc10, doc11 = doc11)
+
+		elif result['Diagnosis_Code'] == '300.3':
+			doc1 = "/static/comparing/Co-morbid_Obsessive-compulsive disorders_doctor_1.png"
+			doc2 = "/static/comparing/Co-morbid_Obsessive-compulsive disorders_doctor_2.png"
+			doc3 = "/static/comparing/Co-morbid_Obsessive-compulsive disorders_doctor_3.png"
+			doc4 = "/static/comparing/Co-morbid_Obsessive-compulsive disorders_doctor_4.png"
+			doc5 = "/static/comparing/Co-morbid_Obsessive-compulsive disorders_doctor_5.png"
+			doc6 = "/static/comparing/Co-morbid_Obsessive-compulsive disorders_doctor_6.png"
+			doc7 = "/static/comparing/Co-morbid_Obsessive-compulsive disorders_doctor_7.png"
+			doc8 = "/static/comparing/Co-morbid_Obsessive-compulsive disorders_doctor_8.png"
+			doc9 = "/static/comparing/Co-morbid_Obsessive-compulsive disorders_doctor_9.png"
+			doc10 = "/static/comparing/Co-morbid_Obsessive-compulsive disorders_doctor_10.png"
+			doc11 = "/static/comparing/Co-morbid_Obsessive-compulsive disorders_doctor_11.png"
+			return render_template('result.html', doc1 = doc1, doc2 = doc2, doc3 = doc3, doc4 = doc4, doc5 = doc5, doc6 = doc6, doc7 = doc7, doc8 = doc8, doc9 = doc9, doc10 = doc10, doc11 = doc11)
+
+		elif result['Diagnosis_Code'] == '296.89':
+			doc1 = "/static/comparing/Co-morbid_Other and unspecified bipolar disorders_doctor_1.png"
+			doc2 = "/static/comparing/Co-morbid_Other and unspecified bipolar disorders_doctor_2.png"
+			doc3 = "/static/comparing/Co-morbid_Other and unspecified bipolar disorders_doctor_3.png"
+			doc4 = "/static/comparing/Co-morbid_Other and unspecified bipolar disorders_doctor_4.png"
+			doc5 = "/static/comparing/Co-morbid_Other and unspecified bipolar disorders_doctor_5.png"
+			doc6 = "/static/comparing/Co-morbid_Other and unspecified bipolar disorders_doctor_6.png"
+			doc7 = "/static/comparing/Co-morbid_Other and unspecified bipolar disorders_doctor_7.png"
+			doc8 = "/static/comparing/Co-morbid_Other and unspecified bipolar disorders_doctor_8.png"
+			doc9 = "/static/comparing/Co-morbid_Other and unspecified bipolar disorders_doctor_9.png"
+			doc10 = "/static/comparing/Co-morbid_Other and unspecified bipolar disorders_doctor_10.png"
+			doc11 = "/static/comparing/Co-morbid_Other and unspecified bipolar disorders_doctor_11.png"
+			return render_template('result.html', doc1 = doc1, doc2 = doc2, doc3 = doc3, doc4 = doc4, doc5 = doc5, doc6 = doc6, doc7 = doc7, doc8 = doc8, doc9 = doc9, doc10 = doc10, doc11 = doc11)
+
+		elif result['Diagnosis_Code'] == '300.01':
+			doc1 = "/static/comparing/Co-morbid_Panic disorder without agoraphobia_doctor_1.png"
+			doc2 = "/static/comparing/Co-morbid_Panic disorder without agoraphobia_doctor_2.png"
+			doc3 = "/static/comparing/Co-morbid_Panic disorder without agoraphobia_doctor_3.png"
+			doc4 = "/static/comparing/Co-morbid_Panic disorder without agoraphobia_doctor_4.png"
+			doc5 = "/static/comparing/Co-morbid_Panic disorder without agoraphobia_doctor_5.png"
+			doc6 = "/static/comparing/Co-morbid_Panic disorder without agoraphobia_doctor_6.png"
+			doc7 = "/static/comparing/Co-morbid_Panic disorder without agoraphobia_doctor_7.png"
+			doc8 = "/static/comparing/Co-morbid_Panic disorder without agoraphobia_doctor_8.png"
+			doc9 = "/static/comparing/Co-morbid_Panic disorder without agoraphobia_doctor_9.png"
+			doc10 = "/static/comparing/Co-morbid_Panic disorder without agoraphobia_doctor_10.png"
+			doc11 = "/static/comparing/Co-morbid_Panic disorder without agoraphobia_doctor_11.png"
+			return render_template('result.html', doc1 = doc1, doc2 = doc2, doc3 = doc3, doc4 = doc4, doc5 = doc5, doc6 = doc6, doc7 = doc7, doc8 = doc8, doc9 = doc9, doc10 = doc10, doc11 = doc11)
+
+		elif result['Diagnosis_Code'] == '295.30':
+			doc1 = "/static/comparing/Co-morbid_Paranoid type schizophrenia_doctor_1.png"
+			doc2 = "/static/comparing/Co-morbid_Paranoid type schizophrenia_doctor_2.png"
+			doc3 = "/static/comparing/Co-morbid_Paranoid type schizophrenia_doctor_3.png"
+			doc4 = "/static/comparing/Co-morbid_Paranoid type schizophrenia_doctor_4.png"
+			doc5 = "/static/comparing/Co-morbid_Paranoid type schizophrenia_doctor_5.png"
+			doc6 = "/static/comparing/Co-morbid_Paranoid type schizophrenia_doctor_6.png"
+			doc7 = "/static/comparing/Co-morbid_Paranoid type schizophrenia_doctor_7.png"
+			doc8 = "/static/comparing/Co-morbid_Paranoid type schizophrenia_doctor_8.png"
+			doc9 = "/static/comparing/Co-morbid_Paranoid type schizophrenia_doctor_9.png"
+			doc10 = "/static/comparing/Co-morbid_Paranoid type schizophrenia_doctor_10.png"
+			doc11 = "/static/comparing/Co-morbid_Paranoid type schizophrenia_doctor_11.png"
+			return render_template('result.html', doc1 = doc1, doc2 = doc2, doc3 = doc3, doc4 = doc4, doc5 = doc5, doc6 = doc6, doc7 = doc7, doc8 = doc8, doc9 = doc9, doc10 = doc10, doc11 = doc11)
+
+		elif result['Diagnosis_Code'] == '309.81':
+			doc1 = "/static/comparing/Co-morbid_Posttraumatic stress disorder_doctor_1.png"
+			doc2 = "/static/comparing/Co-morbid_Posttraumatic stress disorder_doctor_2.png"
+			doc3 = "/static/comparing/Co-morbid_Posttraumatic stress disorder_doctor_3.png"
+			doc4 = "/static/comparing/Co-morbid_Posttraumatic stress disorder_doctor_4.png"
+			doc5 = "/static/comparing/Co-morbid_Posttraumatic stress disorder_doctor_5.png"
+			doc6 = "/static/comparing/Co-morbid_Posttraumatic stress disorder_doctor_6.png"
+			doc7 = "/static/comparing/Co-morbid_Posttraumatic stress disorder_doctor_7.png"
+			doc8 = "/static/comparing/Co-morbid_Posttraumatic stress disorder_doctor_8.png"
+			doc9 = "/static/comparing/Co-morbid_Posttraumatic stress disorder_doctor_9.png"
+			doc10 = "/static/comparing/Co-morbid_Posttraumatic stress disorder_doctor_10.png"
+			doc11 = "/static/comparing/Co-morbid_Posttraumatic stress disorder_doctor_11.png"
+			return render_template('result.html', doc1 = doc1, doc2 = doc2, doc3 = doc3, doc4 = doc4, doc5 = doc5, doc6 = doc6, doc7 = doc7, doc8 = doc8, doc9 = doc9, doc10 = doc10, doc11 = doc11)
+
+		else:
+			doc1 = "/static/comparing/Co-morbid_Schizoaffective disorder_doctor_1.png"
+			doc2 = "/static/comparing/Co-morbid_Schizoaffective disorder_doctor_2.png"
+			doc3 = "/static/comparing/Co-morbid_Schizoaffective disorder_doctor_3.png"
+			doc4 = "/static/comparing/Co-morbid_Schizoaffective disorder_doctor_4.png"
+			doc5 = "/static/comparing/Co-morbid_Schizoaffective disorder_doctor_5.png"
+			doc6 = "/static/comparing/Co-morbid_Schizoaffective disorder_doctor_6.png"
+			doc7 = "/static/comparing/Co-morbid_Schizoaffective disorder_doctor_7.png"
+			doc8 = "/static/comparing/Co-morbid_Schizoaffective disorder_doctor_8.png"
+			doc9 = "/static/comparing/Co-morbid_Schizoaffective disorder_doctor_9.png"
+			doc10 = "/static/comparing/Co-morbid_Schizoaffective disorder_doctor_10.png"
+			doc11 = "/static/comparing/Co-morbid_Schizoaffective disorder_doctor_11.png"
+			return render_template('result.html', doc1 = doc1, doc2 = doc2, doc3 = doc3, doc4 = doc4, doc5 = doc5, doc6 = doc6, doc7 = doc7, doc8 = doc8, doc9 = doc9, doc10 = doc10, doc11 = doc11)
+
+
 @app.route('/getdelay',methods=['POST','GET'])
 def get_delay():
 	if request.method=='POST':

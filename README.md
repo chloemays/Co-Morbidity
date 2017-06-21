@@ -60,6 +60,10 @@ Every image can be liked on for a closer look and more descriptive information
 
 ![image](static/images/zoom_results.png)
 
+## My website
+
+http://ec2-34-226-42-52.compute-1.amazonaws.com:8105/
+
 ## Research:
 
 Paper on Co-Morbidity of mental disorders and medical ones

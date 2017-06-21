@@ -160,59 +160,90 @@ def given_diagnosis(df, diag1_code, df_desc):
     print(together.info())
 
 
-def given_diagnosis_by_doctor(df, diag1_code, df_desc):
+def given_diagnosis_by_doctor(df, diag1_code, df_desc, doc_num):
     plt.close('all')
     df = df.loc[df['Diag 1'] == diag1_code]
-    doc_list = [1,2,3,4,5,6,7,8,9,10,11]
+    # df = df.loc[df['Doctor_Num'] == doc_num]
+    count_list= []
+    df_2 = df['Diag 2'].astype(str)
+    df_3 = df['Diag 3'].astype(str)
+    df_4 = df['Diag 4'].astype(str)
+    unique = df_2.unique()
+    index = np.argwhere(unique =='nan')
+    unique = np.delete(unique, index)
+    for X in unique:
+        count = 0
+        for x in df_2:
+            if X == x:
+                count +=1
+        for x in df_3:
+            if X == x:
+                count +=1
+        for x in df_4:
+            if X == x:
+                count +=1
+        count_list.append(count/len(df)*100)
 
-    for x in doc_list:
-        df = df[df['Doctor_Num'] == x]
-        if df.dropna().empty == True:
-            continue
-        else:
-            count_list= []
-            df_2 = df['Diag 2'].astype(str)
-            df_3 = df['Diag 3'].astype(str)
-            df_4 = df['Diag 4'].astype(str)
-            unique = df_2.unique()
-            index = np.argwhere(unique =='nan')
-            unique = np.delete(unique, index)
-            for X in unique:
-                count = 0
-                for x in df_2:
-                    if X == x:
-                        count +=1
-                for x in df_3:
-                    if X == x:
-                        count +=1
-                for x in df_4:
-                    if X == x:
-                        count +=1
-                count_list.append(count/len(df)*100)
+    together = pd.DataFrame(
+    {'code': unique,
+     'average': count_list
+    })
+    together = together.sort_values(['average'], ascending=[False])
+    #I want to exclude any counts where it was only 1 person
+    together = together[together['average'] != 1/len(df)*100]
 
-            together = pd.DataFrame(
-            {'code': unique,
-             'count': count_list
-            })
-            together = together.sort_values(['count'], ascending=[False])
-            #I want to exclude any counts where it was only 1 person
-            together = together[together['count'] != 1/len(df)*100]
+#list for specific doctors
+    df = df.loc[df['Doctor_Num'] == doc_num]
+    count_list_doc= []
+    df_2 = df['Diag 2'].astype(str)
+    df_3 = df['Diag 3'].astype(str)
+    df_4 = df['Diag 4'].astype(str)
+    unique1 = df_2.unique()
+    index1 = np.argwhere(unique1 =='nan')
+    unique1 = np.delete(unique1, index1)
+    for X in unique1:
+        count = 0
+        for x in df_2:
+            if X == x:
+                count +=1
+        for x in df_3:
+            if X == x:
+                count +=1
+        for x in df_4:
+            if X == x:
+                count +=1
+        count_list_doc.append(count/len(df)*100)
+
+    doc = pd.DataFrame(
+    {'code': unique1,
+     'doctor': count_list_doc
+    })
+    doc = doc.sort_values(['doctor'], ascending=[False])
+    #I want to exclude any counts where it was only 1 person
+    doc = doc[doc['doctor'] != 1/len(df)*100]
 
 
-            #Grab DataFrame rows where column has certain values
-            title_desc1= df_desc[df_desc['Diag 1'] == diag1_code]
-            title_desc = str(list(title_desc1['Diag Desc 1']))
-            title_desc = title_desc.strip("['")
-            title_desc = title_desc.strip("']")
 
-            df_desc = df_desc[df_desc['Diag 1'].isin(together['code'])]
+    #Grab DataFrame rows where column has certain values
+    title_desc1= df_desc[df_desc['Diag 1'] == diag1_code]
+    title_desc = str(list(title_desc1['Diag Desc 1']))
+    title_desc = title_desc.strip("['")
+    title_desc = title_desc.strip("']")
 
-            plt.close('all')
-            #creating bar graph
-            fig = together.plot(x = 'code', y = 'count', kind = 'bar', color = 'r', figsize = (8,8))
-            plt.ylabel('Percent of Patients')
-            plt.title('Co-morbidity for {}'.format(diag1_code))
-            plt.savefig('graphs_tables/Co-morbid_{0}_doctor_{1}.png'.format(diag1_code, x))
+
+    df_desc.rename(columns={'Diag 1': 'code'}, inplace=True)
+    together = pd.merge(together, doc, on = 'code', how = 'left')
+    together = pd.merge(together, df_desc, on= 'code', how='inner')
+
+    plt.close('all')
+    #creating bar graph
+    fig = together.plot(x = 'Diag Desc 1', y = ['average', 'doctor'], kind = 'barh', color = ['Black','Indigo'], figsize = (15,18))
+    plt.yticks(wrap = True, fontsize = 12)
+    plt.subplots_adjust(left=0.3)
+    plt.xlabel('Percent of Patients' , fontsize = 15)
+    plt.legend(fontsize = 15)
+    plt.title('Co-morbidity for {0} by Doctor Number {1}'.format(title_desc, doc_num), fontsize = 15)
+    plt.savefig('static/comparing/Co-morbid_{0}_doctor_{1}.png'.format(title_desc, doc_num))
 
 def table_of_codes(df):
     df_desc = df[['Diag 1','Diag Desc 1']]
@@ -314,8 +345,21 @@ if __name__== '__main__':
     # for x in lst_df:
 
     # given_diagnosis(df_female_41_60,'296.23', df_desc)
-    given_diagnosis(df_female_41_60, '296.90', df_desc)
-    # graph_hist(df_male)
+    # # graph_hist(df_male)
+
+    # given_diagnosis_by_doctor(df_combo, '296.90', df_desc, 11)
+    # given_diagnosis_by_doctor(df_combo, '314.01', df_desc, 11)
+    # given_diagnosis_by_doctor(df_combo, '296.80', df_desc, 11)
+    # given_diagnosis_by_doctor(df_combo, '296.53', df_desc, 11)
+    # given_diagnosis_by_doctor(df_combo, '311', df_desc, 11)
+    # given_diagnosis_by_doctor(df_combo, '300.02', df_desc, 11)
+    # given_diagnosis_by_doctor(df_combo, '296.89', df_desc, 11)
+    # given_diagnosis_by_doctor(df_combo, '300.01', df_desc, 11)
+    # given_diagnosis_by_doctor(df_combo, '295.30', df_desc, 11)
+    # given_diagnosis_by_doctor(df_combo, '309.81', df_desc, 11)
+    # given_diagnosis_by_doctor(df_combo, '295.73', df_desc, 11)
+    # given_diagnosis_by_doctor(df_combo, '300.3', df_desc, 11)
+    # given_diagnosis_by_doctor(df_combo, '296.33', df_desc, 11)
 
 #index of list cod not working 1, 16, 17, 21
 #goal of project

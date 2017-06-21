@@ -60,6 +60,9 @@
                     <li class="page-scroll">
                         <a href="#portfolio">Background Data</a>
                     </li>
+                    <li class="page-scroll">
+                        <a href="#doctorcomp">Compare Doctors!</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -174,10 +177,10 @@
             </div>
             <div class="row">
                 <div class="col-lg-4 col-lg-offset-2">
-                    <p>This data is from one region and 11 different doctors over a 6 month period of time. Based on the last given diagnoses for each individual. </p>
+                    <p>A session with a Pyschiatrist can be between 15 and 30 minutes long. That is why it is important to be prepared! This can give you an idea of what other diagnosis could go along with your initial one and help to know what to ask your doctor about.</p>
                 </div>
                 <div class="col-lg-4">
-                    <p>It is made to help individuals with a diagnoisis get quick information of potential co-occurring diagnoses based on their age and gender.</p>
+                    <p>This data is from one region and 11 different doctors over a 6 month period of time. Based on the last given diagnoses for each individual. It is made to help individuals with a diagnoisis get quick information of potential co-occurring diagnoses based on their age and gender.</p>
                 </div>
                 <!-- <div class="col-lg-8 col-lg-offset-2 text-center">
                     <a href="#" class="btn btn-lg btn-outline">
@@ -259,6 +262,48 @@
                         <img src="../static/startbootstrap-freelancer-gh-pages/img/portfolio/submarine.png" class="img-responsive" alt="Submarine">
                     </a>
                 </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="doctorcomp">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Doctor Comparison</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+                    <div class= "col-sm-12 text-center">
+                        <form action = "/doctorresult" method="POST">
+                        	<p> Diagnosis to Compare: <select name="Diagnosis_Code">
+                        	    <option value="314.01">Attention deficit disorder of childhood with hyperactivity </option>
+                        		<option value="296.80">Bipolar disorder </option>
+                        		<option value="296.53">Bipolar I disorder </option>
+                        		<option value="311">Depressive disorder </option>
+                        		<option value="300.02">Generalized Anxiety Disorder </option>
+                        	    <option value="296.33">Major depressive affective disorder</option>
+                        		<option value="300.3">Obsessive-compulsive disorders  </option>
+                        		<option value="296.89">Other and unspecified bipolar disorders </option>
+                        		<option value="300.01">Panic disorder without agorophobia </option>
+                        		<option value="295.30">Paranoid type schizophrenia </option>
+                        		<option value="309.81">Posttraumatic stress disorder  </option>
+                        		<option value="295.73">Schizoaffective disorder </option>
+                        		<option value="296.90">Unspecified episodic mood disorder  </option>
+                        		</select>  </p>
+
+                    </div>
+                        <br>
+                        <div id="primary"></div>
+                        <div class="row">
+                            <div class="form-group col-xs-12 text-center">
+                                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                        </form>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
